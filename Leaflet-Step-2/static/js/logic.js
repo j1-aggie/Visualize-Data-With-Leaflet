@@ -136,7 +136,7 @@ function magColor(mag) {
 // negative magnitudes, which obviously can't be used for setting the circleMarker radius)
 function magCheck(mag) {
     if (mag <= 1) {
-        return 2
+        return 6
     }
     return mag * 2;
 }
