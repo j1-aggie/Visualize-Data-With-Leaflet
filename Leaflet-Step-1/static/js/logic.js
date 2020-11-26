@@ -2,7 +2,7 @@
 
 var myMap = L.map("map", {
     center: [37.7749, -122.4194],
-    zoom: 4
+    zoom: 3
 });
 
 // add tile layer (the background image) to map
@@ -51,7 +51,7 @@ d3.json(queryUrl, function (data) {
         if (magnitude === 0) {
             return 1;
         }
-        return magnitude * 4;
+        return magnitude * 2;
     }
     //GeoJSON layer
     L.geoJson(data, {
@@ -68,26 +68,31 @@ d3.json(queryUrl, function (data) {
 
     // legend
     var legend = L.control({
-        position: "bottomright"
+        position: "bottomleft"
     });
 
     // details for legend
-    legend.onAdd = function (map) {
+    legend.onAdd = function (myMap) {
         var div = L.DomUtil.create("div", "info legend");
-        var grades = [0, 1, 2, 3, 4, 5];
-        var colors = ["#98ee00",
-            "#d4ee00",
-            "#eecc00",
-            "#ee9c00",
-            "#ea822c",
-            "#ea2c2c"];
+
+        var grades = [0, 1, 2, 3, 4, 5],
+
+
+            colors = [
+                "#98ee00",
+                "#d4ee00",
+                "#eecc00",
+                "#ee9c00",
+                "#ea822c",
+                "#ea2c2c"
+            ];
 
         // loop through
         for (var i = 0; i < grades.length; i++) {
             div.innerHTML +=
-                "<i style='background: " + colors[i] + "'></i> " +
-                grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
+                "<i style='background: " + colors[i] + "'></i> " + grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
         }
+
         return div;
     };
 
