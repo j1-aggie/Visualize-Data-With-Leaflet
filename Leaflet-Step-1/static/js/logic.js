@@ -12,10 +12,9 @@ d3.json(queryUrl, function (data) {
 
 function createMap(earthquakeData) {
 
-    // Loop through locations and markers elements
+    // Loop through locations and markers elements, add popups
     EarthquakeMarkers = earthquakeData.map((feature) =>
-        //Yes, the geojson 'FORMAT' stores it in reverse, for some reason. (L.geojson parses it as [lat,lng] for you)
-        //lat                         //long  
+
         L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             radius: magCheck(feature.properties.mag),
             stroke: true,
@@ -33,11 +32,12 @@ function createMap(earthquakeData) {
 
     // Add the earthquakes layer to a marker cluster group.
     var earthquakes = L.layerGroup(EarthquakeMarkers)
-    //    console.log(d3.extent(d3.values(earthquakeData,((d) => +d.properties.mag))));
+
     var mags = earthquakeData.map((d) => magCheck(+d.properties.mag));
-    console.log(d3.extent(mags));
-    console.log(mags);
-    //    console.log(earthquakeData.properties.mag);
+
+    // console.log(d3.extent(mags));
+    // console.log(mags);
+    // console.log(earthquakeData.properties.mag);
 
 
     // Define streetmap and darkmap layers
@@ -53,32 +53,28 @@ function createMap(earthquakeData) {
         center: [
             37.09, -95.71
         ],
-        zoom: 5,
+        zoom: 3.0,
         layers: [streetmap, earthquakes]
     });
 
     // Add a legend to the map
     var legend = L.control({ position: "bottomright" });
+    labels = ['<strong>Magnitude</strong>'],
+        legend.onAdd = function (myMap) {
+            var div = L.DomUtil.create("div", "legend");
 
-    legend.onAdd = function (myMap) {
-        var div = L.DomUtil.create("div", "legend");
-        div.innerHTML = [
-            "<k class='maglt2'></k><span>0-2</span><br>",
-            "<k class='maglt3'></k><span>2-3</span><br>",
-            "<k class='maglt4'></k><span>3-4</span><br>",
-            "<k class='maglt5'></k><span>4-5</span><br>",
-            "<k class='maggt5'></k><span>5+</span><br>"
-        ].join("");
-        return div;
-    }
+            div.innerHTML = [
+                "<k class='maglt2'></k><span>0-2</span><br>",
+                "<k class='maglt3'></k><span>2-3</span><br>",
+                "<k class='maglt4'></k><span>3-4</span><br>",
+                "<k class='maglt5'></k><span>4-5</span><br>",
+                "<k class='maggt5'></k><span>5+</span><br>"
+            ].join("");
+            return div;
+        }
 
     legend.addTo(myMap);
-    // Create a layer control
-    // Pass in our baseMaps and overlayMaps
-    // Add the layer control to the map
-    //   L.control.layers(baseMaps, overlayMaps, {
-    //     collapsed: false
-    //   }).addTo(myMap);
+
 }
 function magColor(mag) {
     var color = "";
