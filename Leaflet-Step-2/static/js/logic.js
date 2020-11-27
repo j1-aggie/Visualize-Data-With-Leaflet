@@ -94,13 +94,13 @@ function createMap(earthquakeData, platesData) {
 
     // create the map, giving it the streetmap and earthquake layers to display on load
     var myMap = L.map("map", {
-        center: [37.09, -95.71],
-        zoom: 3.5,
+        center: [7.559, -95.62],
+        zoom: 3.0,
         layers: [streetmap, earthquakes]
     });
 
     // add a legend to the map
-    var legend = L.control({ position: "bottomleft" });
+    var legend = L.control({ position: "bottomright" });
 
     legend.onAdd = function (myMap) {
         var div = L.DomUtil.create("div", "legend");

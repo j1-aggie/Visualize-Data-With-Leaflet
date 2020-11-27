@@ -51,7 +51,7 @@ function createMap(earthquakeData) {
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map", {
         center: [
-            37.09, -95.71
+            7.559, -85.62
         ],
         zoom: 3.0,
         layers: [streetmap, earthquakes]
