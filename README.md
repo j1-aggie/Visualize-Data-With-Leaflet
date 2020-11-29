@@ -57,9 +57,9 @@ The first task is to visualize an earthquake data set.
 
 The USGS asked me to plot a second data set on my map to illustrate the relationship between tectonic plates and seismic activity. I pulled in a second data set and visualized it along side my original set of data. The data that I used on tectonic plates can be found at <https://github.com/fraxen/tectonicplates>.
 
-In this step we ..
+In this step I ..
 
-* Ploted a second data set on our map.
+* Plotted a second data set on our map.
 
 * Added a number of base maps to choose from as well as separate out our two different data sets into overlays that can be turned on and off independently.  My additional layers are the dark, satellite, street, and outdoor layers.  Additionally, I added the plate boundaries and seismec activity layers to the street maps.  Upon opening of my maps, the street base map along with the seismic markers appear. 
 
@@ -79,8 +79,4 @@ My final product will be assessed on the following metrics:
 
 * Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
 
-**Good luck!**
 
-### Copyright
-
-Trilogy Education Services © 2019. All Rights Reserved.
