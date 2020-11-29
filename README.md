@@ -63,7 +63,7 @@ In this step I ..
 
 * Added a number of base maps to choose from as well as separate out our two different data sets into overlays that can be turned on and off independently.  My additional layers are the dark, satellite, street, and outdoor layers.  Additionally, I added the plate boundaries and seismec activity layers to the street maps.  Upon opening of my maps, the street base map along with the seismic markers appear. 
 
-* Added layer controls to our map.
+* Added layer controls to my map.
 
 - - -
 
@@ -77,6 +77,6 @@ My final product will be assessed on the following metrics:
 
 * Professionalism
 
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
+* Ensured my repository has regular commits (i.e. 20+ commits) and a thorough README.md file
 
 
