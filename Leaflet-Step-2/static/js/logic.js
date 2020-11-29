@@ -1,7 +1,7 @@
 // store the USGS Earthquake API
 var quakeUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
 
-// tectonic plate API 
+// tectonic plate 
 var platesUrl = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
 
 // perform Get request to the quake Url
