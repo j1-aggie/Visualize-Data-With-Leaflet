@@ -30,7 +30,7 @@ The first task was to visualize an earthquake data set.
 
 ![3-Data](https://user-images.githubusercontent.com/66078772/100487184-fc57b480-30cc-11eb-87c3-7d1ea98af440.png)   
 
-   The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page and pick a data set to visualize. When you click on a data set, for example 'All Earthquakes from the Past 7 Days', you will be given a JSON representation of that data. You will be using the URL of this JSON to pull in the data for our visualization.
+   The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page and pick a data set to visualize. When you click on a data set, for example 'All Earthquakes from the Past 7 Days', you will be given a JSON representation of that data. You will be using the URL of this JSON to pull in the data for our visualization.  I used the URL for the past 30 days. 
 
    ![4-JSON](https://user-images.githubusercontent.com/66078772/100487153-d7634180-30cc-11eb-8774-c908326f060e.png)
 
